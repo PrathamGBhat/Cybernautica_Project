@@ -1,32 +1,252 @@
-import tkinter as tk
-from tkinter import *
-
-'''def Username1():
-    input_text=Username.get()
-    canvas.create_rectangle(577,72,302,56, fill='white',text=input_text)'''
-
-window=tk.Tk()
-window.geometry('1440x1024')
-canvas= tk.Canvas(window, width=1440, height=1024)
-
-rectangle=canvas.create_rectangle(0,0,1440,1024,fill='white')
-
-Outreach=canvas.create_rectangle(19,96,875,270,fill='#D9D9D9')
-'''Transactions=canvas.create_rectangle(1134,868,283,96,fill='#D9D9D9')
-View_Inventory=canvas.create_rectangle(323,860,777,121,fill='#D9D9D9')
-Change_Username=canvas.create_rectangle(-26,532,630,141,fill='#D9D9D9')
-Change_Password=canvas.create_rectangle(55,693,467,102,fill='#D9D9D9')
-Bio=canvas.create_rectangle(681,602,723,194,fill='#D9D9D9')
-Education=canvas.create_rectangle(903,405,501,126,fill='#D9D9D9')
-Registered=canvas.create_rectangle(905,188,499,677,fill='#D9D9D9')
-Contact=canvas.create_rectangle(1019,298,387,63,fill='#D9D9D9')
-Username=canvas.create_rectangle(577,72,302,56,fill='#D9D9D9')'''
 
 
-profile=canvas.create_oval(99,103,401,409,fill='White')
-frame=tk.Frame(window, width=1440, height=1024)
 
-Username=tk.Entry(window, width=30)
-Username.pack()
-canvas.pack()
+
+from pathlib import Path
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+
+
+OUTPUT_PATH = Path(__file__).parent
+ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\pgbha\Downloads\HACMAN\build\assets\frame0")
+
+
+def Username():
+    input
+    username.itemconfig(text='')
+def relative_to_assets(path: str) -> Path:
+    return ASSETS_PATH / Path(path)
+
+
+window = Tk()
+
+window.geometry("540x670")
+window.configure(bg = "#FFFFFF")
+
+
+canvas = Canvas(
+    window,
+    bg = "#FFFFFF",
+    height = 540,
+    width = 670,
+    bd = 0,
+    highlightthickness = 0,
+    relief = "ridge"
+)
+
+canvas.place(x = 0, y = 0)
+canvas.create_rectangle(
+    0.0,
+    0.0,
+    1440.0,
+    1024.0,
+    fill="#878787",
+    outline="")
+
+button_image_1 = PhotoImage(
+    file=relative_to_assets("button_1.png"))
+button_1 = Button(
+    image=button_image_1,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_1 clicked"),
+    relief="flat"
+)
+button_1.place(
+    x=19.0,
+    y=875.0,
+    width=270.0,
+    height=96.0
+)
+
+button_image_2 = PhotoImage(
+    file=relative_to_assets("button_2.png"))
+button_2 = Button(
+    image=button_image_2,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_2 clicked"),
+    relief="flat"
+)
+button_2.place(
+    x=323.0,
+    y=860.0,
+    width=777.0,
+    height=121.0
+)
+
+button_image_3 = PhotoImage(
+    file=relative_to_assets("button_3.png"))
+button_3 = Button(
+    image=button_image_3,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_3 clicked"),
+    relief="flat"
+)
+button_3.place(
+    x=1134.0,
+    y=868.0,
+    width=283.0,
+    height=96.0
+)
+
+canvas.create_text(
+    476.0,
+    32.0,
+    anchor="nw",
+    text="Welcome Back,\n",
+    fill="#000000",
+    font=("Inter", 40 * -1)
+)
+
+canvas.create_rectangle(
+    99.0,
+    103.0,
+    437.0,
+    451.0,
+    fill="#000000",
+    outline="")
+
+button_image_4 = PhotoImage(
+    file=relative_to_assets("button_4.png"))
+button_4 = Button(
+    image=button_image_4,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_4 clicked"),
+    relief="flat"
+)
+button_4.place(
+    x=26.0,
+    y=532.0,
+    width=630.0,
+    height=141.0
+)
+
+canvas.create_text(
+    549.0,
+    177.0,
+    anchor="nw",
+    text="Registered:",
+    fill="#000000",
+    font=("Inter", 40 * -1)
+)
+
+button_image_5 = PhotoImage(
+    file=relative_to_assets("button_5.png"))
+button_5 = Button(
+    image=button_image_5,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_5 clicked"),
+    relief="flat"
+)
+button_5.place(
+    x=55.0,
+    y=693.0,
+    width=467.0,
+    height=103.0
+)
+
+canvas.create_text(
+    604.0,
+    263.0,
+    anchor="nw",
+    text="Contact Number: ",
+    fill="#000000",
+    font=("Inter", 40 * -1)
+)
+
+canvas.create_text(
+    673.0,
+    361.0,
+    anchor="nw",
+    text="Education:",
+    fill="#000000",
+    font=("Inter", 40 * -1)
+)
+
+canvas.create_text(
+    673.0,
+    531.0,
+    anchor="nw",
+    text="Bio:",
+    fill="#000000",
+    font=("Inter", 40 * -1)
+)
+
+button_image_6 = PhotoImage(
+    file=relative_to_assets("button_6.png"))
+button_6 = Button(
+    image=button_image_6,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_6 clicked"),
+    relief="flat"
+)
+button_6.place(
+    x=905.0,
+    y=188.0,
+    width=499.0,
+    height=67.0
+)
+
+button_image_7 = PhotoImage(
+    file=relative_to_assets("button_7.png"))
+button_7 = Button(
+    image=button_image_7,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_7 clicked"),
+    relief="flat"
+)
+button_7.place(
+    x=1019.0,
+    y=298.0,
+    width=387.0,
+    height=63.0
+)
+
+button_image_8 = PhotoImage(
+    file=relative_to_assets("button_8.png"))
+button_8 = Button(
+    image=button_image_8,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_8 clicked"),
+    relief="flat"
+)
+button_8.place(
+    x=903.0,
+    y=405.0,
+    width=501.0,
+    height=126.0
+)
+
+button_image_9 = PhotoImage(
+    file=relative_to_assets("button_9.png"))
+button_9 = Button(
+    image=button_image_9,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: print("button_9 clicked"),
+    relief="flat"
+)
+button_9.place(
+    x=681.0,
+    y=602.0,
+    width=723.0,
+    height=194.0
+)
+
+username=canvas.create_text(
+    577.0,
+    72.0,
+    anchor="nw",
+    text="Username",
+    fill="#FFFFFF",
+    font=("Inter", 40 * -1)
+)
+window.resizable(False, False)
 window.mainloop()
+
